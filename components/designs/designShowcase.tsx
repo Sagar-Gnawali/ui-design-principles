@@ -141,31 +141,6 @@ export default function DesignShowcase({ theme }: DesignShowcaseProps) {
             </div>
           </div>
         </header>
-
-        <div
-          className={`mt-6 grid gap-6 ${
-            theme.layout === "bento"
-              ? "md:grid-cols-3"
-              : "sm:grid-cols-2 lg:grid-cols-3"
-          }`}
-        >
-          {metrics.map((metric) => (
-            <article key={metric.label} className={styles.panel}>
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className={`text-sm ${styles.muted}`}>{metric.label}</p>
-
-                  <p className={`mt-3 text-3xl ${styles.metricValue}`}>
-                    {metric.value}
-                  </p>
-                </div>
-
-                <span className={styles.badge}>{metric.change}</span>
-              </div>
-            </article>
-          ))}
-        </div>
-
         <section
           aria-labelledby={`${theme.slug}-design-analysis`}
           className="mt-6"
@@ -283,6 +258,30 @@ export default function DesignShowcase({ theme }: DesignShowcaseProps) {
             </div>
           </div>
         </section>
+
+        <div
+          className={`mt-6 grid gap-6 ${
+            theme.layout === "bento"
+              ? "md:grid-cols-3"
+              : "sm:grid-cols-2 lg:grid-cols-3"
+          }`}
+        >
+          {metrics.map((metric) => (
+            <article key={metric.label} className={styles.panel}>
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className={`text-sm ${styles.muted}`}>{metric.label}</p>
+
+                  <p className={`mt-3 text-3xl ${styles.metricValue}`}>
+                    {metric.value}
+                  </p>
+                </div>
+
+                <span className={styles.badge}>{metric.change}</span>
+              </div>
+            </article>
+          ))}
+        </div>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
           <article className={styles.panel}>
