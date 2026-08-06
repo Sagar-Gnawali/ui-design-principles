@@ -41,7 +41,29 @@ const chartValues = [38, 56, 42, 72, 60, 88, 74, 95, 82, 100];
 
 export default function DesignShowcase({ theme }: DesignShowcaseProps) {
   const styles = theme.classes;
-
+  const profile = theme.designProfile;
+  const profileOverview = [
+    {
+      title: "What it is",
+      content: profile.about,
+    },
+    {
+      title: "Best choice when",
+      content: profile.bestChoiceWhen,
+    },
+    {
+      title: "Design perspective",
+      content: profile.designPerspective,
+    },
+    {
+      title: "Interaction model",
+      content: profile.interactionModel,
+    },
+    {
+      title: "Frontend implementation",
+      content: profile.implementationNotes,
+    },
+  ];
   const buttonBase =
     "inline-flex min-h-11 items-center justify-center px-5 py-2.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
 
@@ -144,12 +166,129 @@ export default function DesignShowcase({ theme }: DesignShowcaseProps) {
           ))}
         </div>
 
+        <section
+          aria-labelledby={`${theme.slug}-design-analysis`}
+          className="mt-6"
+        >
+          <div className={styles.panel}>
+            <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
+              <div className="max-w-3xl">
+                <span className={styles.badge}>Design guidance</span>
+
+                <h2
+                  id={`${theme.slug}-design-analysis`}
+                  className={`mt-5 text-2xl sm:text-3xl ${styles.heading}`}
+                >
+                  Understanding {theme.name}
+                </h2>
+                <p className={`mt-3 leading-7 ${styles.body}`}>
+                  A practical evaluation of where this design language works,
+                  how users experience it, and what frontend teams should
+                  consider before implementing it.
+                </p>
+              </div>
+              <div className={styles.inset}>
+                <p
+                  className={`text-xs font-semibold uppercase tracking-[0.16em] ${styles.muted}`}
+                >
+                  Implementation effort
+                </p>
+
+                <p className={`mt-2 text-xl ${styles.metricValue}`}>
+                  {profile.effort.level}
+                </p>
+
+                <p
+                  className={`mt-2 max-w-sm text-sm leading-6 ${styles.muted}`}
+                >
+                  {profile.effort.explanation}
+                </p>
+              </div>
+            </div>
+            <div className="mt-8 grid gap-4 lg:grid-cols-2">
+              {profileOverview.map((item) => (
+                <article key={item.title} className={styles.inset}>
+                  <h3 className={`text-base ${styles.heading}`}>
+                    {item.title}
+                  </h3>
+
+                  <p className={`mt-3 text-sm leading-7 ${styles.body}`}>
+                    {item.content}
+                  </p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-6 grid gap-6 lg:grid-cols-3">
+              <article className={styles.inset}>
+                <h3 className={`text-lg ${styles.heading}`}>Best suited for</h3>
+                <ul className="mt-4 space-y-3">
+                  {profile.suitedFor.map((item) => (
+                    <li
+                      key={item}
+                      className={`flex items-start gap-3 text-sm leading-6 ${styles.body}`}
+                    >
+                      <span
+                        aria-hidden="true"
+                        className={`mt-2 h-2 w-2 shrink-0 rounded-full ${styles.accent}`}
+                      />
+
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              <article className={styles.inset}>
+                <h3 className={`text-lg ${styles.heading}`}>
+                  Real-world use cases
+                </h3>
+
+                <ul className="mt-4 space-y-3">
+                  {profile.useCases.map((item) => (
+                    <li
+                      key={item}
+                      className={`flex items-start gap-3 text-sm leading-6 ${styles.body}`}
+                    >
+                      <span
+                        aria-hidden="true"
+                        className={`mt-2 h-2 w-2 shrink-0 rounded-full ${styles.accent}`}
+                      />
+
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              <article className={styles.inset}>
+                <h3 className={`text-lg ${styles.heading}`}>
+                  Important considerations
+                </h3>
+
+                <ul className="mt-4 space-y-3">
+                  {profile.considerations.map((item) => (
+                    <li
+                      key={item}
+                      className={`flex items-start gap-3 text-sm leading-6 ${styles.body}`}
+                    >
+                      <span
+                        aria-hidden="true"
+                        className={`mt-2 h-2 w-2 shrink-0 rounded-full ${styles.accent}`}
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <div className="mt-6 grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
           <article className={styles.panel}>
             <div className="flex items-center justify-between">
               <div>
                 <h2 className={`text-xl ${styles.heading}`}>Performance</h2>
-
                 <p className={`mt-1 text-sm ${styles.muted}`}>
                   Activity across the last ten periods
                 </p>

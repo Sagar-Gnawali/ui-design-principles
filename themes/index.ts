@@ -30,6 +30,43 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
         "rounded-xl border border-slate-300 bg-white text-slate-950 placeholder:text-slate-400",
       accent: "bg-blue-600",
     },
+    // description/significance
+    designProfile: {
+      about:
+        "Bento design organises information into modular cards of different sizes. Each card represents a focused task, metric, feature, or content group, allowing users to scan a large amount of information without facing one continuous page.",
+      suitedFor: [
+        "Analytics dashboards",
+        "SaaS product homepages",
+        "Project management tools",
+        "Admin platforms",
+        "Productivity applications",
+      ],
+      bestChoiceWhen:
+        "Choose Bento when the interface contains several independent pieces of information that must remain visible, scannable, and easy to prioritise.",
+      designPerspective:
+        "From a UI and UX perspective, Bento works well because it creates hierarchy through card size, position, spacing, and contrast. Larger cards communicate greater importance, while smaller cards support secondary actions and contextual information.",
+      useCases: [
+        "A revenue dashboard showing sales, conversion, customers, and recent activity",
+        "A project workspace containing tasks, deadlines, team activity, and progress",
+        "A cloud platform overview displaying service health and resource usage",
+        "A personal productivity dashboard combining notes, calendar, and goals",
+      ],
+      interactionModel:
+        "Interactions should remain contained within each card. Cards may expand, reveal more detail, support filtering, or provide a clear primary action. Avoid making every card highly interactive, as this can reduce hierarchy and increase cognitive load.",
+      implementationNotes:
+        "Use CSS Grid for the main layout and define predictable column spans for important cards. Components should remain reusable, responsive, and content-aware. On smaller screens, the grid should collapse into a clear single-column sequence.",
+      effort: {
+        level: "Medium",
+        explanation:
+          "The visual styling is straightforward, but creating a balanced grid, responsive card spans, and meaningful hierarchy requires thoughtful layout planning.",
+      },
+      considerations: [
+        "Do not use card size only for decoration; size should communicate importance",
+        "Avoid excessive nesting of cards inside cards",
+        "Maintain a logical mobile reading order",
+        "Keep spacing and alignment consistent across modules",
+      ],
+    },
   },
 
   claymorphism: {
@@ -66,6 +103,51 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
       input:
         "rounded-2xl border-2 border-white/60 bg-white/50 text-violet-950 placeholder:text-violet-500",
       accent: "bg-violet-500",
+    },
+    // description/significance
+    designProfile: {
+      about:
+        "Claymorphism uses rounded forms, soft inner shadows, bright colours, and exaggerated depth to create a tactile and playful interface. Components often appear inflated, soft, or physically shaped.",
+
+      suitedFor: [
+        "Educational products",
+        "Children-focused applications",
+        "Creative tools",
+        "Onboarding experiences",
+        "Friendly consumer products",
+      ],
+
+      bestChoiceWhen:
+        "Choose Claymorphism when the product should feel approachable, expressive, playful, and emotionally warm rather than formal or highly technical.",
+
+      designPerspective:
+        "Claymorphism can create a strong emotional identity and make interfaces feel less intimidating. However, it should support the product’s personality rather than being applied to every element purely for visual effect.",
+
+      useCases: [
+        "A language-learning application with interactive lesson cards",
+        "A children’s learning dashboard",
+        "A creative portfolio or illustration tool",
+        "A wellness application using friendly progress components",
+      ],
+
+      interactionModel:
+        "Buttons and controls should feel tactile, with subtle compression, elevation, or bounce feedback. Animations should be short and purposeful so that the interface feels responsive rather than slow or overly playful.",
+
+      implementationNotes:
+        "Clay surfaces usually require layered box shadows, rounded geometry, controlled colour palettes, and careful component spacing. Reusable shadow and radius tokens are important because inconsistent depth quickly makes the UI feel visually unbalanced.",
+
+      effort: {
+        level: "Medium",
+        explanation:
+          "Basic Claymorphism is easy to produce, but maintaining consistent lighting, depth, contrast, and component states across a full application requires design discipline.",
+      },
+
+      considerations: [
+        "Soft colours can create insufficient text contrast",
+        "Large shadows may reduce visual clarity on smaller screens",
+        "Avoid applying heavy clay effects to dense data tables",
+        "Use motion carefully to prevent the interface feeling childish",
+      ],
     },
   },
 
@@ -104,6 +186,51 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
         "border border-cyan-400/70 bg-black text-cyan-100 placeholder:text-cyan-700",
       accent: "bg-fuchsia-500 shadow-[0_0_14px_#d946ef]",
     },
+    // description/significance
+    designProfile: {
+      about:
+        "Cyberpunk design combines dark surfaces, neon colour accents, technical typography, sharp borders, grid patterns, and system-inspired visual language to create a futuristic and high-energy interface.",
+
+      suitedFor: [
+        "Gaming platforms",
+        "Developer tools",
+        "AI experimentation interfaces",
+        "Music and entertainment products",
+        "Science-fiction experiences",
+      ],
+
+      bestChoiceWhen:
+        "Choose Cyberpunk when the product intentionally needs a futuristic, experimental, technical, or entertainment-focused identity.",
+
+      designPerspective:
+        "Cyberpunk creates immediate visual impact and a strong brand personality. It is most effective when used as a controlled design language rather than as constant visual noise. Information hierarchy must remain stronger than decorative effects.",
+
+      useCases: [
+        "A gaming launcher showing players, achievements, and live events",
+        "An AI model monitoring console",
+        "A music visualisation dashboard",
+        "A fictional command-centre interface",
+      ],
+
+      interactionModel:
+        "Interactions may use scanning lines, short glow transitions, status pulses, terminal-style feedback, and sharp state changes. Critical actions should remain predictable and should not depend only on animation or neon colour.",
+
+      implementationNotes:
+        "Build the design from a limited set of neon accent tokens, dark surface levels, monospaced typography, border patterns, and glow utilities. Use pseudo-elements or background gradients for decoration rather than adding unnecessary DOM elements.",
+
+      effort: {
+        level: "High",
+        explanation:
+          "A refined Cyberpunk interface requires careful control of contrast, glow, animation, typography, performance, and responsive behaviour. Poorly controlled effects can quickly make the UI difficult to use.",
+      },
+
+      considerations: [
+        "Excessive glow can reduce readability",
+        "Bright colours should not be the only indication of state",
+        "Continuous animations may affect performance and accessibility",
+        "Avoid using the style for formal or trust-sensitive services",
+      ],
+    },
   },
 
   glassmorphism: {
@@ -139,6 +266,51 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
       input:
         "rounded-xl border border-white/25 bg-white/10 text-white placeholder:text-white/50 backdrop-blur-lg",
       accent: "bg-cyan-300",
+    },
+    // description/significance
+    designProfile: {
+      about:
+        "Glassmorphism creates visual depth using translucent surfaces, background blur, subtle borders, soft shadows, and layered colour. Elements appear to float above a colourful or photographic background.",
+
+      suitedFor: [
+        "AI product interfaces",
+        "Creative portfolios",
+        "Premium landing pages",
+        "Media applications",
+        "Modern dashboard experiences",
+      ],
+
+      bestChoiceWhen:
+        "Choose Glassmorphism when the product benefits from visual depth, atmosphere, and premium presentation while maintaining a relatively simple content structure.",
+
+      designPerspective:
+        "Glassmorphism is effective when transparency communicates hierarchy between layers. The background, glass surface, and foreground content must remain visually distinct. It should not reduce readability for the sake of visual style.",
+
+      useCases: [
+        "An AI assistant dashboard with floating tool panels",
+        "A music player displayed over album artwork",
+        "A travel application using destination photography",
+        "A portfolio with layered project cards",
+      ],
+
+      interactionModel:
+        "Interactive surfaces can become slightly brighter, more opaque, or more elevated during hover and focus. Changes should remain subtle because strong movement can weaken the calm, layered experience.",
+
+      implementationNotes:
+        "Use backdrop blur, semi-transparent backgrounds, subtle white borders, and controlled gradients. Always provide a fallback surface colour because backdrop filters may render differently across browsers and devices.",
+
+      effort: {
+        level: "Medium",
+        explanation:
+          "The core effect is simple, but achieving consistent contrast, browser support, responsive performance, and readable content requires careful testing.",
+      },
+
+      considerations: [
+        "Transparent panels may fail contrast requirements",
+        "Large backdrop filters can affect rendering performance",
+        "Busy backgrounds can make text difficult to read",
+        "Avoid stacking too many transparent surfaces",
+      ],
     },
   },
 
@@ -178,6 +350,50 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
       accent:
         "bg-gradient-to-t from-cyan-300 to-white shadow-[0_0_18px_rgba(103,232,249,0.65)]",
     },
+    designProfile: {
+      about:
+        "Liquid Glass extends traditional glass-based design with fluid shapes, luminous colour, soft distortion, layered reflections, and motion that suggests a flexible or responsive material.",
+
+      suitedFor: [
+        "Premium digital products",
+        "Immersive landing pages",
+        "Creative software",
+        "AI interfaces",
+        "Experimental product experiences",
+      ],
+
+      bestChoiceWhen:
+        "Choose Liquid Glass when emotional impact, movement, and premium presentation are central to the product experience and the interface contains relatively focused content.",
+
+      designPerspective:
+        "From a design perspective, Liquid Glass can make an interface feel advanced and highly crafted. Its value comes from controlled depth and motion, not from placing blur and distortion on every component.",
+
+      useCases: [
+        "A premium AI workspace with floating contextual controls",
+        "An immersive product launch page",
+        "A creative editing application",
+        "A media experience with fluid navigation surfaces",
+      ],
+
+      interactionModel:
+        "Surfaces may gently shift, stretch, glow, or respond to pointer movement. Motion should reinforce spatial relationships and interaction feedback rather than functioning as decoration alone.",
+
+      implementationNotes:
+        "Implementation may involve layered gradients, backdrop filters, masks, pseudo-elements, transforms, and controlled motion. Use GPU-friendly properties such as transform and opacity, and provide reduced-motion alternatives.",
+
+      effort: {
+        level: "High",
+        explanation:
+          "Liquid Glass requires advanced visual layering, animation refinement, performance testing, accessibility fallbacks, and careful behaviour across screen sizes.",
+      },
+
+      considerations: [
+        "Complex effects may perform poorly on lower-powered devices",
+        "Motion must respect reduced-motion preferences",
+        "Distortion should never interfere with text legibility",
+        "Use the style selectively around high-value interface areas",
+      ],
+    },
   },
 
   minimal: {
@@ -210,6 +426,50 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
       input:
         "border border-neutral-300 bg-white text-neutral-950 placeholder:text-neutral-400",
       accent: "bg-neutral-950",
+    },
+    designProfile: {
+      about:
+        "Minimal design reduces the interface to essential content, typography, spacing, and actions. It avoids unnecessary decoration and allows hierarchy, wording, and layout to guide the user.",
+
+      suitedFor: [
+        "Documentation platforms",
+        "Editorial websites",
+        "Professional portfolios",
+        "Enterprise products",
+        "Content-focused applications",
+      ],
+
+      bestChoiceWhen:
+        "Choose Minimal design when clarity, trust, speed, accessibility, and content comprehension are more important than visual spectacle.",
+
+      designPerspective:
+        "Minimal design is not the absence of design. It requires precise typography, spacing, hierarchy, alignment, and content decisions. Because there are fewer decorative elements, small inconsistencies become more visible.",
+
+      useCases: [
+        "A technical documentation platform",
+        "A professional consultancy website",
+        "A writing or note-taking application",
+        "A focused checkout or account-management flow",
+      ],
+
+      interactionModel:
+        "Interactions should be direct, predictable, and quiet. Focus, hover, loading, success, and error states must still be clearly communicated even when the visual treatment remains restrained.",
+
+      implementationNotes:
+        "Use a disciplined spacing scale, strong typography tokens, semantic HTML, clear focus states, and a small colour system. Components should avoid unnecessary wrappers, decorative shadows, and complex visual effects.",
+
+      effort: {
+        level: "Low",
+        explanation:
+          "The technical styling effort is relatively low, but achieving a refined result requires strong judgement in typography, spacing, content structure, and visual hierarchy.",
+      },
+
+      considerations: [
+        "Minimal does not mean removing useful context",
+        "Very subtle states can be difficult to recognise",
+        "Typography quality becomes especially important",
+        "Do not sacrifice discoverability to preserve visual simplicity",
+      ],
     },
   },
 
@@ -245,6 +505,50 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
       input:
         "rounded-xl border-0 bg-[#e4e9f0] text-slate-700 placeholder:text-slate-400 shadow-[inset_5px_5px_10px_#c2c6cc,inset_-5px_-5px_10px_#ffffff]",
       accent: "bg-blue-500",
+    },
+    designProfile: {
+      about:
+        "Neumorphism creates tactile-looking interfaces by using matching background colours with paired light and dark shadows. Components appear raised from or pressed into the surrounding surface.",
+
+      suitedFor: [
+        "Media controls",
+        "Small productivity tools",
+        "Device-control interfaces",
+        "Focused dashboards",
+        "Interactive concept projects",
+      ],
+
+      bestChoiceWhen:
+        "Choose Neumorphism for focused interfaces with a limited number of controls where tactile appearance is more important than displaying dense information.",
+
+      designPerspective:
+        "Neumorphism can create a calm and distinctive interface, but its low-contrast surfaces often create usability challenges. It works best as a selective component treatment rather than a complete solution for every screen.",
+
+      useCases: [
+        "A music player with playback controls",
+        "A smart-home control panel",
+        "A calculator interface",
+        "A focused timer or habit tracker",
+      ],
+
+      interactionModel:
+        "Raised elements should appear pressed when activated. Users need clear hover, focus, selected, disabled, and active states because subtle shadow changes alone may not communicate state reliably.",
+
+      implementationNotes:
+        "Use a consistent surface colour and generate light and dark shadow tokens from the same visual system. Combine shadow changes with borders, icons, labels, or colour changes to maintain accessibility.",
+
+      effort: {
+        level: "Medium",
+        explanation:
+          "The visual effect is technically simple, but accessible interaction states, consistent lighting, dark-mode support, and readable controls require additional refinement.",
+      },
+
+      considerations: [
+        "Low contrast can create serious accessibility issues",
+        "Pressed and inactive states may look too similar",
+        "The style is not well suited to dense tables or complex forms",
+        "Always provide visible keyboard focus indicators",
+      ],
     },
   },
 };
