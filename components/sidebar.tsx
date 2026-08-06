@@ -55,13 +55,13 @@ export default function Sidebar() {
           aria-expanded={designsOpen}
           aria-controls="design-navigation"
           onClick={() => setDesignsOpen((current) => !current)}
-          className={`flex w-full items-center justify-between rounded-xl px-4 py-3 transition ${
+          className={`flex w-full items-center justify-between rounded-xl px-4 py-3 transition cursor-pointer ${
             pathname.startsWith("/designs")
               ? "text-blue-400"
               : "hover:bg-slate-800"
           }`}
         >
-          <span className="flex items-center gap-3">
+          <span className="flex items-center gap-3 ">
             <FolderOpen size={20} aria-hidden="true" />
             <span>Designs</span>
           </span>
