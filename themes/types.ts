@@ -2,6 +2,12 @@ import type { ThemeSlug } from "@/config/designs";
 
 export type ImplementationEffort = "Low" | "Medium" | "High";
 
+export type DesignColorToken = {
+  name: string;
+  value: string;
+  role: string;
+};
+
 export type DesignProfile = {
   about: string;
   suitedFor: string[];
@@ -10,6 +16,7 @@ export type DesignProfile = {
   useCases: string[];
   interactionModel: string;
   implementationNotes: string;
+  palette: DesignColorToken[];
   effort: {
     level: ImplementationEffort;
     explanation: string;
