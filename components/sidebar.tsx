@@ -6,7 +6,6 @@ import {
   ChevronDown,
   ChevronRight,
   FolderOpen,
-  Home,
   Moon,
   User,
 } from "lucide-react";
@@ -40,18 +39,6 @@ export default function Sidebar() {
 
       <nav aria-label="Main navigation" className="flex-1 overflow-y-auto p-5">
         <Link
-          href="/dashboard"
-          className={`mb-2 flex items-center gap-3 rounded-xl px-4 py-3 transition ${
-            pathname === "/dashboard"
-              ? "bg-blue-600 text-white"
-              : "hover:bg-slate-800"
-          }`}
-        >
-          <Home size={20} aria-hidden="true" />
-          <span>Dashboard</span>
-        </Link>
-
-        <Link
           href="/about"
           className={`mb-5 flex items-center gap-3 rounded-xl px-4 py-3 transition ${
             pathname === "/about"
@@ -68,13 +55,13 @@ export default function Sidebar() {
           aria-expanded={designsOpen}
           aria-controls="design-navigation"
           onClick={() => setDesignsOpen((current) => !current)}
-          className={`flex w-full items-center justify-between rounded-xl px-4 py-3 transition ${
+          className={`flex w-full items-center justify-between rounded-xl px-4 py-3 transition cursor-pointer ${
             pathname.startsWith("/designs")
               ? "text-blue-400"
               : "hover:bg-slate-800"
           }`}
         >
-          <span className="flex items-center gap-3">
+          <span className="flex items-center gap-3 ">
             <FolderOpen size={20} aria-hidden="true" />
             <span>Designs</span>
           </span>

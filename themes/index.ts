@@ -66,6 +66,38 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
         "Maintain a logical mobile reading order",
         "Keep spacing and alignment consistent across modules",
       ],
+      palette: [
+        {
+          name: "Canvas",
+          value: "#F3F4F6",
+          role: "Main application background",
+        },
+        {
+          name: "Surface",
+          value: "#FFFFFF",
+          role: "Cards, panels and elevated content",
+        },
+        {
+          name: "Primary text",
+          value: "#020617",
+          role: "Headings, important values and primary actions",
+        },
+        {
+          name: "Accent blue",
+          value: "#2563EB",
+          role: "Navigation, active states and highlighted actions",
+        },
+        {
+          name: "Muted text",
+          value: "#64748B",
+          role: "Supporting copy and secondary information",
+        },
+        {
+          name: "Border",
+          value: "#E2E8F0",
+          role: "Card boundaries and visual grouping",
+        },
+      ],
     },
   },
 
@@ -147,6 +179,43 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
         "Large shadows may reduce visual clarity on smaller screens",
         "Avoid applying heavy clay effects to dense data tables",
         "Use motion carefully to prevent the interface feeling childish",
+      ],
+      palette: [
+        {
+          name: "Pink canvas",
+          value: "#FFD6EC",
+          role: "Warm background gradient",
+        },
+        {
+          name: "Lavender canvas",
+          value: "#DDD6FE",
+          role: "Middle gradient colour",
+        },
+        {
+          name: "Blue canvas",
+          value: "#BAE6FD",
+          role: "Cool background gradient",
+        },
+        {
+          name: "Clay surface",
+          value: "#F3D4FF",
+          role: "Primary raised surfaces",
+        },
+        {
+          name: "Secondary surface",
+          value: "#C4E9FF",
+          role: "Supporting cards and content areas",
+        },
+        {
+          name: "Action violet",
+          value: "#8B5CF6",
+          role: "Primary buttons and interactive elements",
+        },
+        {
+          name: "Deep text",
+          value: "#2E1065",
+          role: "Headings and important content",
+        },
       ],
     },
   },
@@ -230,6 +299,43 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
         "Continuous animations may affect performance and accessibility",
         "Avoid using the style for formal or trust-sensitive services",
       ],
+      palette: [
+        {
+          name: "System background",
+          value: "#050505",
+          role: "Main interface canvas",
+        },
+        {
+          name: "Panel black",
+          value: "#000000",
+          role: "Command panels and elevated surfaces",
+        },
+        {
+          name: "Neon lime",
+          value: "#BEF264",
+          role: "Primary actions, headings and status indicators",
+        },
+        {
+          name: "Electric cyan",
+          value: "#22D3EE",
+          role: "Borders, focus states and system information",
+        },
+        {
+          name: "Signal magenta",
+          value: "#D946EF",
+          role: "Data emphasis, alerts and secondary accents",
+        },
+        {
+          name: "Interface text",
+          value: "#CFFAFE",
+          role: "Primary readable content",
+        },
+        {
+          name: "Neon glow",
+          value: "#D9F906",
+          role: "Decorative shadows and high-energy highlights",
+        },
+      ],
     },
   },
 
@@ -310,6 +416,43 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
         "Large backdrop filters can affect rendering performance",
         "Busy backgrounds can make text difficult to read",
         "Avoid stacking too many transparent surfaces",
+      ],
+      palette: [
+        {
+          name: "Indigo base",
+          value: "#1E1B4B",
+          role: "Dark gradient foundation",
+        },
+        {
+          name: "Violet layer",
+          value: "#6D28D9",
+          role: "Primary gradient colour",
+        },
+        {
+          name: "Cyan layer",
+          value: "#06B6D4",
+          role: "Bright atmospheric accent",
+        },
+        {
+          name: "Glass surface",
+          value: "rgba(255, 255, 255, 0.15)",
+          role: "Translucent cards and panels",
+        },
+        {
+          name: "Glass border",
+          value: "rgba(255, 255, 255, 0.25)",
+          role: "Surface boundaries and reflected light",
+        },
+        {
+          name: "Primary text",
+          value: "#FFFFFF",
+          role: "Headings and important content",
+        },
+        {
+          name: "Muted glass text",
+          value: "rgba(255, 255, 255, 0.60)",
+          role: "Supporting information",
+        },
       ],
     },
   },
@@ -393,6 +536,43 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
         "Distortion should never interfere with text legibility",
         "Use the style selectively around high-value interface areas",
       ],
+      palette: [
+        {
+          name: "Electric blue",
+          value: "#2563EB",
+          role: "Bright gradient origin and interactive energy",
+        },
+        {
+          name: "Deep blue",
+          value: "#172554",
+          role: "Mid-depth background layer",
+        },
+        {
+          name: "Night surface",
+          value: "#020617",
+          role: "Deep background and contrast foundation",
+        },
+        {
+          name: "Liquid surface",
+          value: "rgba(255, 255, 255, 0.10)",
+          role: "Fluid glass panels",
+        },
+        {
+          name: "Liquid highlight",
+          value: "rgba(255, 255, 255, 0.25)",
+          role: "Reflections and surface lighting",
+        },
+        {
+          name: "Luminous cyan",
+          value: "#67E8F9",
+          role: "Accents, charts and active elements",
+        },
+        {
+          name: "Primary text",
+          value: "#FFFFFF",
+          role: "Readable foreground content",
+        },
+      ],
     },
   },
 
@@ -469,6 +649,38 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
         "Very subtle states can be difficult to recognise",
         "Typography quality becomes especially important",
         "Do not sacrifice discoverability to preserve visual simplicity",
+      ],
+      palette: [
+        {
+          name: "Canvas",
+          value: "#FFFFFF",
+          role: "Primary application background",
+        },
+        {
+          name: "Subtle surface",
+          value: "#FAFAFA",
+          role: "Secondary content regions",
+        },
+        {
+          name: "Primary text",
+          value: "#0A0A0A",
+          role: "Headings, buttons and important information",
+        },
+        {
+          name: "Body text",
+          value: "#404040",
+          role: "Long-form copy and supporting content",
+        },
+        {
+          name: "Muted text",
+          value: "#737373",
+          role: "Metadata and secondary information",
+        },
+        {
+          name: "Border",
+          value: "#D4D4D4",
+          role: "Dividers, inputs and structural boundaries",
+        },
       ],
     },
   },
@@ -548,6 +760,38 @@ export const themes: Record<ThemeSlug, DesignTheme> = {
         "Pressed and inactive states may look too similar",
         "The style is not well suited to dense tables or complex forms",
         "Always provide visible keyboard focus indicators",
+      ],
+      palette: [
+        {
+          name: "Base surface",
+          value: "#E4E9F0",
+          role: "Shared page and component surface",
+        },
+        {
+          name: "Dark shadow",
+          value: "#C2C6CC",
+          role: "Creates the lower, recessed edge",
+        },
+        {
+          name: "Light shadow",
+          value: "#FFFFFF",
+          role: "Creates the raised highlight edge",
+        },
+        {
+          name: "Interaction blue",
+          value: "#2563EB",
+          role: "Active controls and selected states",
+        },
+        {
+          name: "Primary text",
+          value: "#334155",
+          role: "Headings and readable foreground content",
+        },
+        {
+          name: "Muted text",
+          value: "#64748B",
+          role: "Descriptions and secondary information",
+        },
       ],
     },
   },
