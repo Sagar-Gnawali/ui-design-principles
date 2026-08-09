@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-
-// import Sidebar from "@/components/Sidebar";
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
 
@@ -22,7 +20,6 @@ export default function RootLayout({
       <body>
         <div className="flex min-h-dvh">
           <Sidebar />
-
           <main className="min-w-0 flex-1 overflow-x-hidden">{children}</main>
         </div>
       </body>

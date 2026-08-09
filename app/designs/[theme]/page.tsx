@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 import DesignShowcase from "@/components/designs/designShowcase";
 import { DESIGN_PAGES, isThemeSlug } from "@/config/designs";
 import { themes } from "@/themes";
+import payload from "../../../data/payload.json" with { type: "json" };
 
+import { DesignTheme } from "@/themes/types";
 type DesignPageProps = {
   params: Promise<{
     theme: string;
@@ -43,7 +45,16 @@ export default async function DesignPage({ params }: DesignPageProps) {
     notFound();
   }
 
-  const selectedTheme = themes[theme];
+  // Call from API or read from center Redux toolkit or statement management tools
+  const selectedThemes: DesignTheme | undefined = (
+    payload as DesignTheme[]
+  ).find((it) => it.slug === theme);
 
-  return <DesignShowcase theme={selectedTheme} />;
+  if (!selectedThemes) return notFound();
+
+  return (
+    <>
+      <DesignShowcase theme={selectedThemes} />
+    </>
+  );
 }

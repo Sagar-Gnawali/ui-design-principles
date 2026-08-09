@@ -75,25 +75,21 @@ export default function DesignShowcase({ theme }: DesignShowcaseProps) {
         aria-hidden="true"
         className={`pointer-events-none absolute inset-0 ${styles.decoration}`}
       />
-
       <div className="relative mx-auto max-w-7xl">
         <header className={styles.hero}>
           <div className="grid items-center gap-10 lg:grid-cols-[1.4fr_0.6fr]">
             <div>
               <span className={styles.badge}>{theme.eyebrow}</span>
-
               <h1
                 className={`mt-6 text-4xl sm:text-5xl lg:text-7xl ${styles.heading}`}
               >
                 {theme.name}
               </h1>
-
               <p
                 className={`mt-5 max-w-2xl text-base leading-8 sm:text-lg ${styles.body}`}
               >
                 {theme.description}
               </p>
-
               <div className="mt-8 flex flex-wrap gap-3">
                 <button
                   type="button"
@@ -110,7 +106,6 @@ export default function DesignShowcase({ theme }: DesignShowcaseProps) {
                 </button>
               </div>
             </div>
-
             <div className={styles.inset}>
               <p
                 className={`text-xs font-semibold uppercase tracking-[0.16em] ${styles.muted}`}

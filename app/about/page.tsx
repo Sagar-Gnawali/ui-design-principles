@@ -1,10 +1,12 @@
 import DesignPatternSection from "@/components/designs/designPatternSelection";
 import { DESIGN_PAGES } from "@/config/designs";
-import { themes } from "@/themes";
-
-const orderedThemes = DESIGN_PAGES.map((design) => themes[design.slug]);
+import { themeData } from "@/themes";
+import { DesignTheme } from "@/themes/types";
 
 export default function AboutPage() {
+  const orderedThemes: DesignTheme[] = themeData.filter((it1) => {
+    return DESIGN_PAGES.some((it2) => it2.name === it1.name);
+  });
   return (
     <main className="min-w-0 bg-slate-950">
       <section className="border-b border-slate-800 bg-slate-950 px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">

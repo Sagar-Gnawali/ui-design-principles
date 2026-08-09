@@ -1,0 +1,529 @@
+[
+    {
+        "slug": "bento",
+        "name": "Bento Grid",
+        "eyebrow": "Structured Modular Interface",
+        "description": "A modular grid-based interface inspired by Japanese bento boxes, designed to organise different information densities into visually distinct blocks.",
+        "designProfile": {
+            "about": "Bento design divides an interface into independent but visually connected content blocks. Each block can represent metrics, actions, media, navigation or contextual information.",
+            "suitedFor": [
+                "SaaS dashboards",
+                "Developer tools",
+                "Analytics platforms",
+                "AI products",
+                "Portfolio websites"
+            ],
+            "bestChoiceWhen": "The application contains several types of information that need clear visual grouping without relying on a traditional table-heavy dashboard.",
+            "designPerspective": "From a UI/UX perspective, Bento layouts establish hierarchy through size, placement and whitespace rather than excessive borders or navigation.",
+            "useCases": [
+                "AI agent dashboards",
+                "Analytics overview pages",
+                "Product dashboards",
+                "Developer portfolios",
+                "Admin interfaces"
+            ],
+            "interactionModel": "Users scan independent visual modules and move between high-level summaries and deeper information.",
+            "implementationNotes": "CSS Grid is the preferred implementation. Use responsive column spans and avoid excessively irregular card sizes that weaken the information hierarchy.",
+            "palette": [
+                {
+                    "name": "Canvas",
+                    "value": "#F8FAFC",
+                    "role": "Primary background"
+                },
+                {
+                    "name": "Surface",
+                    "value": "#FFFFFF",
+                    "role": "Cards and panels"
+                },
+                {
+                    "name": "Ink",
+                    "value": "#0F172A",
+                    "role": "Primary typography"
+                },
+                {
+                    "name": "Accent",
+                    "value": "#6366F1",
+                    "role": "Interactive emphasis"
+                }
+            ],
+            "effort": {
+                "level": "Medium",
+                "explanation": "The visual styling is relatively straightforward, but responsive grid behaviour and information hierarchy require thoughtful layout engineering."
+            },
+            "considerations": [
+                "Maintain consistent spacing",
+                "Avoid too many card sizes",
+                "Preserve mobile hierarchy",
+                "Keep each card focused on one purpose"
+            ]
+        },
+        "layout": "bento",
+        "classes": {
+            "page": "bg-slate-50 text-slate-950",
+            "decoration": "bg-indigo-500/10",
+            "hero": "bg-white border border-slate-200",
+            "panel": "bg-white border border-slate-200 shadow-sm",
+            "inset": "bg-slate-100",
+            "badge": "bg-indigo-50 text-indigo-700",
+            "heading": "text-slate-950",
+            "body": "text-slate-700",
+            "muted": "text-slate-500",
+            "metricValue": "text-indigo-600",
+            "primaryButton": "bg-indigo-600 text-white hover:bg-indigo-700",
+            "secondaryButton": "bg-white border border-slate-300 text-slate-700",
+            "input": "bg-white border border-slate-300",
+            "accent": "text-indigo-600"
+        }
+    },
+    {
+        "slug": "glassmorphism",
+        "name": "Glassmorphism",
+        "eyebrow": "Layered Translucent Interface",
+        "description": "An interface style using transparency, background blur, subtle borders and layered surfaces to create visual depth.",
+        "designProfile": {
+            "about": "Glassmorphism creates translucent interface surfaces that visually separate foreground information from colourful or dimensional backgrounds.",
+            "suitedFor": [
+                "AI interfaces",
+                "Creative applications",
+                "Landing pages",
+                "Media platforms",
+                "Premium dashboards"
+            ],
+            "bestChoiceWhen": "Visual atmosphere and depth are important while the amount of information remains manageable.",
+            "designPerspective": "Glass surfaces establish depth through translucency instead of strong borders, but readability must remain more important than visual effects.",
+            "useCases": [
+                "AI assistants",
+                "Music applications",
+                "Creative dashboards",
+                "Product landing pages"
+            ],
+            "interactionModel": "Interactive content appears on floating visual layers while the background establishes environmental context.",
+            "implementationNotes": "Use backdrop-filter blur, semi-transparent surfaces and subtle borders. Always provide adequate contrast and graceful fallbacks.",
+            "palette": [
+                {
+                    "name": "Night",
+                    "value": "#0F172A",
+                    "role": "Background"
+                },
+                {
+                    "name": "Glass",
+                    "value": "rgba(255,255,255,0.12)",
+                    "role": "Surface"
+                },
+                {
+                    "name": "Glow",
+                    "value": "#8B5CF6",
+                    "role": "Accent"
+                },
+                {
+                    "name": "Ice",
+                    "value": "#E0F2FE",
+                    "role": "Typography highlight"
+                }
+            ],
+            "effort": {
+                "level": "Medium",
+                "explanation": "Blur and translucency are easy to implement but achieving accessibility, performance and visual consistency requires additional refinement."
+            },
+            "considerations": [
+                "Check text contrast",
+                "Limit expensive blur layers",
+                "Provide solid fallbacks",
+                "Avoid excessive transparency"
+            ]
+        },
+        "layout": "standard",
+        "classes": {
+            "page": "bg-slate-950 text-white",
+            "decoration": "bg-violet-500/30 blur-3xl",
+            "hero": "bg-white/10 backdrop-blur-xl border border-white/20",
+            "panel": "bg-white/10 backdrop-blur-xl border border-white/20",
+            "inset": "bg-white/5",
+            "badge": "bg-white/10 text-violet-200",
+            "heading": "text-white",
+            "body": "text-slate-200",
+            "muted": "text-slate-400",
+            "metricValue": "text-violet-300",
+            "primaryButton": "bg-violet-500 text-white hover:bg-violet-400",
+            "secondaryButton": "bg-white/10 border border-white/20",
+            "input": "bg-white/10 border border-white/20 text-white",
+            "accent": "text-violet-300"
+        }
+    },
+    {
+        "slug": "liquid-glass",
+        "name": "Liquid Glass",
+        "eyebrow": "Fluid Spatial Interface",
+        "description": "A highly polished translucent interface inspired by fluid materials, optical distortion and spatial layering.",
+        "designProfile": {
+            "about": "Liquid Glass extends glass-style interfaces with stronger depth, reflective highlights, fluid shapes and responsive surface behaviour.",
+            "suitedFor": [
+                "Premium product experiences",
+                "AI interfaces",
+                "Creative applications",
+                "Spatial interfaces",
+                "Technology showcases"
+            ],
+            "bestChoiceWhen": "The product needs a highly differentiated and premium visual identity rather than a purely utilitarian interface.",
+            "designPerspective": "The interface should behave more like a physical material than a collection of flat cards, while still preserving information hierarchy.",
+            "useCases": [
+                "AI assistants",
+                "Premium dashboards",
+                "Spatial interfaces",
+                "Creative tools",
+                "Experimental portfolios"
+            ],
+            "interactionModel": "Surfaces respond to pointer position, scrolling and hierarchy using subtle movement, reflection and depth.",
+            "implementationNotes": "Combine backdrop blur, gradients, highlights, layered borders and carefully controlled motion. GPU-heavy effects should be used selectively.",
+            "palette": [
+                {
+                    "name": "Deep Space",
+                    "value": "#050816",
+                    "role": "Base background"
+                },
+                {
+                    "name": "Liquid Cyan",
+                    "value": "#67E8F9",
+                    "role": "Primary highlight"
+                },
+                {
+                    "name": "Liquid Violet",
+                    "value": "#A78BFA",
+                    "role": "Secondary highlight"
+                },
+                {
+                    "name": "Crystal",
+                    "value": "rgba(255,255,255,0.16)",
+                    "role": "Glass surface"
+                }
+            ],
+            "effort": {
+                "level": "High",
+                "explanation": "High-quality Liquid Glass requires careful compositing, animation, accessibility testing and performance optimisation."
+            },
+            "considerations": [
+                "GPU performance",
+                "Motion accessibility",
+                "Text contrast",
+                "Mobile rendering performance",
+                "Avoid visual over-decoration"
+            ]
+        },
+        "layout": "standard",
+        "classes": {
+            "page": "bg-slate-950 text-white",
+            "decoration": "bg-cyan-400/20 blur-3xl",
+            "hero": "bg-white/10 backdrop-blur-2xl border border-white/20",
+            "panel": "bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl",
+            "inset": "bg-white/5",
+            "badge": "bg-cyan-300/10 text-cyan-200",
+            "heading": "text-white",
+            "body": "text-slate-200",
+            "muted": "text-slate-400",
+            "metricValue": "text-cyan-300",
+            "primaryButton": "bg-white text-slate-950 hover:bg-cyan-50",
+            "secondaryButton": "bg-white/10 border border-white/20",
+            "input": "bg-white/10 border border-white/20",
+            "accent": "text-cyan-300"
+        }
+    },
+    {
+        "slug": "minimal",
+        "name": "Minimal",
+        "eyebrow": "Clarity First Interface",
+        "description": "A restrained interface system prioritising typography, whitespace, hierarchy and usability over decorative effects.",
+        "designProfile": {
+            "about": "Minimal design removes unnecessary visual elements and allows typography, content hierarchy and spacing to perform most of the communication.",
+            "suitedFor": [
+                "Enterprise software",
+                "Productivity tools",
+                "Documentation",
+                "Developer tools",
+                "Editorial products"
+            ],
+            "bestChoiceWhen": "Content clarity, usability and long-term maintainability are more important than decorative differentiation.",
+            "designPerspective": "Minimalism is not simply removing decoration. It requires disciplined typography, spacing, hierarchy and interaction design.",
+            "useCases": [
+                "Developer documentation",
+                "SaaS applications",
+                "Enterprise dashboards",
+                "Knowledge bases",
+                "Productivity software"
+            ],
+            "interactionModel": "Predictable controls and strong information hierarchy minimise cognitive load.",
+            "implementationNotes": "Use a consistent spacing system, restrained colour palette and clear typography scale.",
+            "palette": [
+                {
+                    "name": "Canvas",
+                    "value": "#FFFFFF",
+                    "role": "Background"
+                },
+                {
+                    "name": "Ink",
+                    "value": "#18181B",
+                    "role": "Primary text"
+                },
+                {
+                    "name": "Muted",
+                    "value": "#71717A",
+                    "role": "Secondary text"
+                },
+                {
+                    "name": "Border",
+                    "value": "#E4E4E7",
+                    "role": "Structural separation"
+                }
+            ],
+            "effort": {
+                "level": "Low",
+                "explanation": "The implementation is technically straightforward, although strong typography and spacing discipline are required."
+            },
+            "considerations": [
+                "Typography quality becomes critical",
+                "Maintain spacing consistency",
+                "Avoid excessive visual emptiness",
+                "Provide clear interaction states"
+            ]
+        },
+        "layout": "standard",
+        "classes": {
+            "page": "bg-white text-zinc-950",
+            "decoration": "bg-zinc-100",
+            "hero": "bg-white border border-zinc-200",
+            "panel": "bg-white border border-zinc-200",
+            "inset": "bg-zinc-50",
+            "badge": "bg-zinc-100 text-zinc-700",
+            "heading": "text-zinc-950",
+            "body": "text-zinc-700",
+            "muted": "text-zinc-500",
+            "metricValue": "text-zinc-950",
+            "primaryButton": "bg-zinc-950 text-white hover:bg-zinc-800",
+            "secondaryButton": "bg-white border border-zinc-300",
+            "input": "bg-white border border-zinc-300",
+            "accent": "text-zinc-950"
+        }
+    },
+    {
+        "slug": "cyberpunk",
+        "name": "Cyberpunk",
+        "eyebrow": "High-Energy Digital Interface",
+        "description": "A dark futuristic interface using neon accents, sharp typography and high-contrast visual signals.",
+        "designProfile": {
+            "about": "Cyberpunk design combines dark environments with intense colours, technological motifs and deliberate visual tension.",
+            "suitedFor": [
+                "Gaming",
+                "Developer experiments",
+                "Security products",
+                "Web3 interfaces",
+                "Technology portfolios"
+            ],
+            "bestChoiceWhen": "Brand identity requires a futuristic, experimental or intentionally unconventional visual language.",
+            "designPerspective": "Strong visual identity should not compromise information hierarchy or basic usability.",
+            "useCases": [
+                "Gaming dashboards",
+                "Security monitoring",
+                "Developer portfolios",
+                "Experimental AI interfaces"
+            ],
+            "interactionModel": "High-contrast signals indicate interactive elements, states and system activity.",
+            "implementationNotes": "Use neon accents selectively and avoid applying glow effects to every element.",
+            "palette": [
+                {
+                    "name": "Void",
+                    "value": "#020617",
+                    "role": "Background"
+                },
+                {
+                    "name": "Neon Cyan",
+                    "value": "#22D3EE",
+                    "role": "Primary accent"
+                },
+                {
+                    "name": "Neon Pink",
+                    "value": "#F472B6",
+                    "role": "Secondary accent"
+                },
+                {
+                    "name": "Signal",
+                    "value": "#A3E635",
+                    "role": "System status"
+                }
+            ],
+            "effort": {
+                "level": "Medium",
+                "explanation": "Basic styling is straightforward, but maintaining visual consistency and accessibility across intense colours takes refinement."
+            },
+            "considerations": [
+                "Avoid excessive glow",
+                "Maintain readable typography",
+                "Use animation carefully",
+                "Keep accessibility contrast predictable"
+            ]
+        },
+        "layout": "standard",
+        "classes": {
+            "page": "bg-slate-950 text-cyan-50",
+            "decoration": "bg-fuchsia-500/20 blur-3xl",
+            "hero": "bg-slate-900 border border-cyan-400/30",
+            "panel": "bg-slate-900 border border-cyan-400/20",
+            "inset": "bg-slate-950",
+            "badge": "bg-cyan-400/10 text-cyan-300",
+            "heading": "text-cyan-50",
+            "body": "text-slate-300",
+            "muted": "text-slate-500",
+            "metricValue": "text-lime-300",
+            "primaryButton": "bg-cyan-400 text-slate-950",
+            "secondaryButton": "border border-fuchsia-400 text-fuchsia-300",
+            "input": "bg-slate-950 border border-cyan-400/30",
+            "accent": "text-fuchsia-400"
+        }
+    },
+    {
+        "slug": "neumorphism",
+        "name": "Neumorphism",
+        "eyebrow": "Soft Physical Interface",
+        "description": "A soft interface style using matching surface colours and opposing shadows to create raised and recessed elements.",
+        "designProfile": {
+            "about": "Neumorphism attempts to make interface controls appear physically embedded into a continuous surface.",
+            "suitedFor": [
+                "Concept interfaces",
+                "Media controls",
+                "Small dashboards",
+                "Prototype applications"
+            ],
+            "bestChoiceWhen": "The interface is small, visually focused and does not contain large amounts of dense information.",
+            "designPerspective": "Neumorphism can create attractive physical affordances but often needs additional accessibility cues.",
+            "useCases": [
+                "Music players",
+                "Control panels",
+                "Prototype dashboards",
+                "Interactive demonstrations"
+            ],
+            "interactionModel": "Controls visually move between raised and recessed physical states.",
+            "implementationNotes": "Use paired light and dark shadows while ensuring controls remain distinguishable through more than shadow alone.",
+            "palette": [
+                {
+                    "name": "Surface",
+                    "value": "#E5E7EB",
+                    "role": "Background and controls"
+                },
+                {
+                    "name": "Ink",
+                    "value": "#334155",
+                    "role": "Typography"
+                },
+                {
+                    "name": "Light Shadow",
+                    "value": "#FFFFFF",
+                    "role": "Raised highlight"
+                },
+                {
+                    "name": "Dark Shadow",
+                    "value": "#CBD5E1",
+                    "role": "Surface depth"
+                }
+            ],
+            "effort": {
+                "level": "Medium",
+                "explanation": "Shadow implementation is straightforward, but maintaining accessible controls requires additional design work."
+            },
+            "considerations": [
+                "Accessibility",
+                "Low contrast controls",
+                "Clear focus states",
+                "Avoid dense interfaces"
+            ]
+        },
+        "layout": "standard",
+        "classes": {
+            "page": "bg-slate-200 text-slate-800",
+            "decoration": "bg-slate-300",
+            "hero": "bg-slate-200 shadow-xl",
+            "panel": "bg-slate-200 shadow-lg",
+            "inset": "bg-slate-200 shadow-inner",
+            "badge": "bg-slate-200 text-slate-600 shadow-sm",
+            "heading": "text-slate-900",
+            "body": "text-slate-700",
+            "muted": "text-slate-500",
+            "metricValue": "text-indigo-600",
+            "primaryButton": "bg-slate-200 text-indigo-600 shadow-lg",
+            "secondaryButton": "bg-slate-200 text-slate-700 shadow-md",
+            "input": "bg-slate-200 shadow-inner",
+            "accent": "text-indigo-600"
+        }
+    },
+    {
+        "slug": "claymorphism",
+        "name": "Claymorphism",
+        "eyebrow": "Playful Dimensional Interface",
+        "description": "A friendly visual style using rounded forms, soft depth, bright colours and inflated card-like surfaces.",
+        "designProfile": {
+            "about": "Claymorphism creates playful three-dimensional surfaces using large radii, inner highlights and soft shadows.",
+            "suitedFor": [
+                "Education products",
+                "Consumer applications",
+                "Creative tools",
+                "Onboarding experiences"
+            ],
+            "bestChoiceWhen": "The product should feel friendly, approachable and visually distinctive.",
+            "designPerspective": "Clay surfaces communicate personality effectively but should not overwhelm functional information.",
+            "useCases": [
+                "Learning applications",
+                "Consumer dashboards",
+                "Onboarding",
+                "Creative portfolios"
+            ],
+            "interactionModel": "Large dimensional controls create obvious interactive targets and friendly visual feedback.",
+            "implementationNotes": "Combine generous border radii, soft shadows, inner highlights and restrained gradients.",
+            "palette": [
+                {
+                    "name": "Lavender",
+                    "value": "#EDE9FE",
+                    "role": "Background"
+                },
+                {
+                    "name": "Purple",
+                    "value": "#8B5CF6",
+                    "role": "Primary accent"
+                },
+                {
+                    "name": "Pink",
+                    "value": "#F9A8D4",
+                    "role": "Secondary accent"
+                },
+                {
+                    "name": "Ink",
+                    "value": "#4C1D95",
+                    "role": "Typography"
+                }
+            ],
+            "effort": {
+                "level": "Medium",
+                "explanation": "The underlying CSS is straightforward but creating coherent depth and responsive dimensional components requires careful tuning."
+            },
+            "considerations": [
+                "Avoid excessive visual weight",
+                "Use shadows consistently",
+                "Maintain text contrast",
+                "Keep animations subtle"
+            ]
+        },
+        "layout": "standard",
+        "classes": {
+            "page": "bg-violet-100 text-violet-950",
+            "decoration": "bg-pink-300/40 blur-3xl",
+            "hero": "bg-violet-200 rounded-3xl shadow-xl",
+            "panel": "bg-violet-200 rounded-3xl shadow-lg",
+            "inset": "bg-violet-100",
+            "badge": "bg-white/60 text-violet-700",
+            "heading": "text-violet-950",
+            "body": "text-violet-800",
+            "muted": "text-violet-600",
+            "metricValue": "text-violet-700",
+            "primaryButton": "bg-violet-600 text-white rounded-2xl shadow-lg",
+            "secondaryButton": "bg-violet-200 text-violet-800 rounded-2xl shadow-md",
+            "input": "bg-violet-50 border border-violet-200 rounded-2xl",
+            "accent": "text-pink-600"
+        }
+    }
+]
