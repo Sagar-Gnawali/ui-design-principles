@@ -1,5 +1,8 @@
 import type { ThemeSlug } from "@/config/designs";
 import type { DesignTheme } from "./types";
+import themePayload from "../data/payload.json" with { type: "json" };
+
+export const themeData: DesignTheme[] = themePayload as DesignTheme[];
 
 export const themes: Record<ThemeSlug, DesignTheme> = {
   bento: {

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import DesignShowcase from "@/components/designs/designShowcase";
-import { DESIGN_PAGES, isThemeSlug } from "@/config/designs";
+import { DESIGN_PAGES, isThemeSlug, ThemeSlug } from "@/config/designs";
 import { themes } from "@/themes";
 
+import DesignPageClient from "./designPageClient";
 type DesignPageProps = {
   params: Promise<{
     theme: string;
@@ -39,11 +39,9 @@ export async function generateMetadata({
 export default async function DesignPage({ params }: DesignPageProps) {
   const { theme } = await params;
 
-  if (!isThemeSlug(theme)) {
+  // check this from API first (future improvements)
+  if (!theme) {
     notFound();
   }
-
-  const selectedTheme = themes[theme];
-
-  return <DesignShowcase theme={selectedTheme} />;
+  return <DesignPageClient theme={theme as ThemeSlug} />;
 }
