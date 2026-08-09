@@ -1,16 +1,13 @@
 "use client";
 import DesignPatternSection from "@/components/designs/designPatternSelection";
 import { useThemes } from "../services/theme.queries";
+import Loading from "./loading";
 
 export default function AboutPage() {
   const { data: orderedThemes, isPending } = useThemes();
 
   if (isPending) {
-    return (
-      <main className="p-10">
-        <p>Loading themes...</p>
-      </main>
-    );
+    return <Loading />;
   }
 
   return (

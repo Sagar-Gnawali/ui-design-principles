@@ -3,6 +3,7 @@
 import { useTheme } from "@/app/services/theme.queries";
 import DesignShowcase from "@/components/designs/designShowcase";
 import { ThemeSlug } from "@/config/designs";
+import Loading from "./loading";
 
 type Props = {
   theme: ThemeSlug;
@@ -12,7 +13,7 @@ export default function DesignPageClient({ theme }: Props) {
   const { data, isPending, isError, error } = useTheme(theme);
 
   if (isPending) {
-    return <div>Loading design...</div>;
+    return <Loading />;
   }
 
   if (isError) {
