@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import DesignShowcase from "@/components/designs/designShowcase";
-import { DESIGN_PAGES, isThemeSlug } from "@/config/designs";
+import { DESIGN_PAGES, isThemeSlug, ThemeSlug } from "@/config/designs";
 import { themes } from "@/themes";
-import payload from "../../../data/payload.json" with { type: "json" };
 
-import { DesignTheme } from "@/themes/types";
+import DesignPageClient from "./designPageClient";
 type DesignPageProps = {
   params: Promise<{
     theme: string;
@@ -41,20 +39,9 @@ export async function generateMetadata({
 export default async function DesignPage({ params }: DesignPageProps) {
   const { theme } = await params;
 
-  if (!isThemeSlug(theme)) {
+  // check this from API first (future improvements)
+  if (!theme) {
     notFound();
   }
-
-  // Call from API or read from center Redux toolkit or statement management tools
-  const selectedThemes: DesignTheme | undefined = (
-    payload as DesignTheme[]
-  ).find((it) => it.slug === theme);
-
-  if (!selectedThemes) return notFound();
-
-  return (
-    <>
-      <DesignShowcase theme={selectedThemes} />
-    </>
-  );
+  return <DesignPageClient theme={theme as ThemeSlug} />;
 }
