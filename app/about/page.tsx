@@ -1,12 +1,18 @@
+"use client";
 import DesignPatternSection from "@/components/designs/designPatternSelection";
-import { DESIGN_PAGES } from "@/config/designs";
-import { themeData } from "@/themes";
-import { DesignTheme } from "@/themes/types";
+import { useThemes } from "../services/theme.queries";
 
 export default function AboutPage() {
-  const orderedThemes: DesignTheme[] = themeData.filter((it1) => {
-    return DESIGN_PAGES.some((it2) => it2.name === it1.name);
-  });
+  const { data: orderedThemes, isPending } = useThemes();
+
+  if (isPending) {
+    return (
+      <main className="p-10">
+        <p>Loading themes...</p>
+      </main>
+    );
+  }
+
   return (
     <main className="min-w-0 bg-slate-950">
       <section className="border-b border-slate-800 bg-slate-950 px-4 py-16 text-white sm:px-6 lg:px-8 lg:py-24">
@@ -28,10 +34,9 @@ export default function AboutPage() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             <SummaryMetric
-              value={String(orderedThemes.length)}
+              value={String(orderedThemes?.length)}
               label="Design systems"
             />
-
             <SummaryMetric value="1" label="Shared component architecture" />
 
             <SummaryMetric value="100%" label="Theme-driven implementation" />
@@ -44,7 +49,7 @@ export default function AboutPage() {
         className="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/90 px-4 py-4 backdrop-blur-xl sm:px-6 lg:px-8"
       >
         <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto">
-          {orderedThemes.map((theme) => {
+          {orderedThemes?.map((theme) => {
             const accent =
               theme.designProfile.palette.find((colour) =>
                 colour.name.toLowerCase().includes("accent"),
@@ -75,7 +80,7 @@ export default function AboutPage() {
         </div>
       </nav>
 
-      {orderedThemes.map((theme, index) => (
+      {orderedThemes?.map((theme, index) => (
         <DesignPatternSection key={theme.slug} theme={theme} index={index} />
       ))}
     </main>
