@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
+import RtkProviders from "./provider";
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +21,9 @@ export default function RootLayout({
       <body>
         <div className="flex min-h-dvh">
           <Sidebar />
-          <main className="min-w-0 flex-1 overflow-x-hidden">{children}</main>
+          <main className="min-w-0 flex-1 overflow-x-hidden">
+            <RtkProviders>{children}</RtkProviders>
+          </main>
         </div>
       </body>
     </html>
