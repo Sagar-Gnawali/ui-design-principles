@@ -431,7 +431,7 @@ export default function CreateThemeForm() {
         <button
           type="button"
           onClick={addPalette}
-          className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 text-sm font-medium hover:bg-slate-50"
+          className="inline-flex items-center gap-2 rounded-xl text-black cursor-pointer border border-slate-300 px-4 py-2 text-sm font-medium hover:bg-slate-50"
         >
           <Plus size={16} />
           Add color
