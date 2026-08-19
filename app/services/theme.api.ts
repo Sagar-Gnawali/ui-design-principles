@@ -1,29 +1,27 @@
 import { ThemeSlug } from "@/config/designs";
 import { DesignTheme } from "@/themes/types";
-
-type ThemesResponse = {
-  data: DesignTheme[];
-  total: number;
-};
-
-type ThemeResponse = {
-  data: DesignTheme;
-};
+import { httpCall } from "./_interceptor";
+import { BASE_URL } from "@/config/constants";
 
 export async function getThemes(): Promise<DesignTheme[]> {
-  const response = await fetch("/api/themes");
+  const response = await httpCall<{ data: DesignTheme[] }>({
+    endpoint: `${BASE_URL}/themes`,
+  });
   if (!response.ok) {
     throw new Error("Failed to fetch design themes");
   }
-  const result: ThemesResponse = await response.json();
-  return result.data;
+  return response.data.data;
 }
 
 export async function getTheme(slug: ThemeSlug): Promise<DesignTheme> {
-  const response = await fetch(`/api/themes/${slug}`);
-  if (!response.ok) {
+  const res = await httpCall<{ data: DesignTheme }>({
+    endpoint: `${BASE_URL}/themes/${slug}`,
+  });
+  // const response = await fetch(`/api/themes/${slug}`); need to clean this once everthing is pushed or tested in the prod
+  if (!res.ok) {
     throw new Error(`Failed to fetch theme: ${slug}`);
   }
-  const result: ThemeResponse = await response.json();
-  return result.data;
+  // const result: ThemeResponse = res.data;
+  // return result.data;
+  return res.data.data;
 }

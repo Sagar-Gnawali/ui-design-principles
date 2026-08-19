@@ -10,7 +10,7 @@ export default function DesignLoading() {
         md:px-10
       "
     >
-      <div className="mx-auto max-w-[1500px] animate-pulse space-y-7">
+      <div className="mx-auto animate-pulse space-y-7">
         <section
           className="
             rounded-[4rem]

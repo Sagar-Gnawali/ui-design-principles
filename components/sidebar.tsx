@@ -8,6 +8,7 @@ import {
   FolderOpen,
   Moon,
   User,
+  Plus,
 } from "lucide-react";
 
 import { DESIGN_PAGES } from "@/config/designs";
@@ -49,7 +50,17 @@ export default function Sidebar() {
           <User size={20} aria-hidden="true" />
           <span>About</span>
         </Link>
-
+        <Link
+          href="/designs/new"
+          className={`flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition ${
+            pathname === "/designs/new"
+              ? "bg-blue-600 text-white"
+              : "text-blue-400 hover:bg-slate-800 hover:text-blue-300"
+          }`}
+        >
+          <Plus size={18} />
+          <span>Create Theme</span>
+        </Link>
         <button
           type="button"
           aria-expanded={designsOpen}
