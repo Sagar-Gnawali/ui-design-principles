@@ -30,7 +30,7 @@ export default function ArrayField({
               value={value}
               placeholder={placeholder}
               onChange={(event) => onChange(index, event.target.value)}
-              className="flex-1 rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+              className="flex-1 text-slate-950  rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
             />
 
             <button
