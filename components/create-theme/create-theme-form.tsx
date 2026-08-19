@@ -13,20 +13,18 @@ import {
 } from "lucide-react";
 
 import { DesignTheme } from "@/themes/types";
-import { useCreateTheme } from "@/app/services/theme.mutation";
+import { ErrorInterface, useCreateTheme } from "@/app/services/theme.mutation";
 import FormSection from "./form-selection";
 import FormField from "./form-field";
 import ArrayField from "./array";
 import { createThemeInitialState } from "@/themes/createThemeInitialState";
-import { error } from "console";
 
 export default function CreateThemeForm() {
   const router = useRouter();
 
   const [form, setForm] = useState<DesignTheme>(createThemeInitialState);
 
-  const { isPending, data, mutate, isError, error } = useCreateTheme();
-
+  const { isPending, mutateAsync, isError, error } = useCreateTheme();
   function updateRoot(
     key: keyof Pick<
       DesignTheme,
@@ -173,14 +171,15 @@ export default function CreateThemeForm() {
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-
     try {
-      console.log("form >>>>", form);
       //Todo Call API here
-      const res = await mutate(form);
+      const res = await mutateAsync(form);
+      console.log("resposne from api >>>", res, error);
+
       //   router.push(`/designs/${createdTheme.slug}`);
-    } catch (error) {
-      console.error(error);
+    } catch (er) {
+      const apiError = er as ErrorInterface;
+      console.log("error and data in on Error >>>", apiError.error);
     }
   }
 
@@ -468,7 +467,7 @@ export default function CreateThemeForm() {
 
       {isError && (
         <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
-          {error.message}
+          {error?.message}
         </div>
       )}
 
