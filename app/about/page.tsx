@@ -2,6 +2,7 @@
 import DesignPatternSection from "@/components/designs/designPatternSelection";
 import { useThemes } from "../services/theme.queries";
 import Loading from "./loading";
+import { SummaryMetric } from "@/components/summarymetric";
 
 export default function AboutPage() {
   const { data: orderedThemes, isPending } = useThemes();
@@ -18,7 +19,7 @@ export default function AboutPage() {
             DesignHub documentation
           </span>
 
-          <h1 className="mt-6 max-w-5xl text-4xl font-bold tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 max-w-5xl text-4xl font-bold sm:text-6xl lg:text-7xl">
             Understanding modern interface design patterns
           </h1>
 
@@ -81,20 +82,5 @@ export default function AboutPage() {
         <DesignPatternSection key={theme.slug} theme={theme} index={index} />
       ))}
     </main>
-  );
-}
-
-type SummaryMetricProps = {
-  value: string;
-  label: string;
-};
-
-function SummaryMetric({ value, label }: SummaryMetricProps) {
-  return (
-    <article className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-      <p className="text-3xl font-bold tracking-tight text-white">{value}</p>
-
-      <p className="mt-2 text-sm text-slate-400">{label}</p>
-    </article>
   );
 }
