@@ -139,7 +139,7 @@ export default function CreateThemeForm() {
           ...current.designProfile.palette,
           {
             name: "",
-            value: "#2563EB",
+            value: "",
             role: "",
           },
         ],
@@ -212,6 +212,7 @@ export default function CreateThemeForm() {
           />
 
           <FormField
+            //
             label="Eyebrow"
             value={form.eyebrow}
             placeholder="Spatial interface"
@@ -228,7 +229,7 @@ export default function CreateThemeForm() {
 
         <div>
           <label className="mb-2 block text-sm font-medium text-slate-800">
-            Descriptionss
+            Descriptions
           </label>
 
           <textarea
@@ -236,7 +237,7 @@ export default function CreateThemeForm() {
             value={form.description}
             onChange={(event) => updateRoot("description", event.target.value)}
             placeholder="Describe the theme..."
-            className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+            className="w-full rounded-xl border border-slate-300 text-slate-950  px-4 py-3 outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
           />
         </div>
       </FormSection>
@@ -335,7 +336,7 @@ export default function CreateThemeForm() {
                 },
               }))
             }
-            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+            className="w-full rounded-xl border text-slate-950  border-slate-300 bg-white px-4 py-3 outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
           >
             <option value="Low">Low</option>
 
@@ -394,18 +395,19 @@ export default function CreateThemeForm() {
                 <input
                   type="color"
                   value={color.value}
-                  onChange={(event) =>
-                    updatePalette(index, color.value, event.target.value)
-                  }
+                  onChange={(event) => {
+                    // change the field name of "value", make it dynamic later if needed
+                    updatePalette(index, "value", event.target.value);
+                  }}
                   className="h-12 w-14 cursor-pointer rounded-lg border border-slate-300"
                 />
-
                 <input
                   value={color.value}
-                  onChange={(event) =>
-                    updatePalette(index, color.value, event.target.value)
-                  }
-                  className="min-w-0 flex-1 rounded-xl border border-slate-300 px-3 py-3 font-mono text-sm"
+                  onChange={(event) => {
+                    // change the field name of "value", make it dynamic later if needed
+                    updatePalette(index, "value", event.target.value);
+                  }}
+                  className="min-w-0 flex-1 rounded-xl text-slate-950 border border-slate-300 px-3 py-3 font-mono text-sm"
                 />
               </div>
             </div>
@@ -511,7 +513,7 @@ function ProfileTextarea({
         rows={4}
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="w-full resize-y rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+        className="w-full resize-y rounded-xl border text-slate-950  border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
       />
     </div>
   );
