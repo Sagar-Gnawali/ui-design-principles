@@ -25,3 +25,13 @@ export async function getTheme(slug: ThemeSlug): Promise<DesignTheme> {
   // return result.data;
   return res.data.data;
 }
+
+export async function getSideBarThemes(): Promise<string[]> {
+  const response = await httpCall<{ data: string[] }>({
+    endpoint: `${BASE_URL}/themes/slugs`,
+  });
+  if (!response.ok) {
+    throw new Error("Failed to fetch design themes");
+  }
+  return response?.data?.data;
+}
