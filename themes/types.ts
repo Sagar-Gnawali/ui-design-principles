@@ -50,3 +50,7 @@ export type DesignTheme = {
     accent: string;
   };
 };
+
+export type SideBarThemes = {
+  data: string[];
+};
