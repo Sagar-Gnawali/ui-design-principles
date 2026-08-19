@@ -64,3 +64,12 @@ export type ThemeSlug = (typeof DESIGN_PAGES)[number]["slug"];
 export function isThemeSlug(value: string): value is ThemeSlug {
   return DESIGN_PAGES.some((design) => design.slug === value);
 }
+export function getAvailableDesignPages(apiThemes: string[] | undefined) {
+  if (!apiThemes) return [];
+  const availableThemes = new Set(
+    apiThemes.map((theme) => theme.trim().toLowerCase()),
+  );
+  return DESIGN_PAGES.filter((page) =>
+    availableThemes.has(page.slug.toLowerCase()),
+  );
+}
