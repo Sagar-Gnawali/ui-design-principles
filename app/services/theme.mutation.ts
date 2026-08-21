@@ -14,7 +14,7 @@ async function createTheme(payload: DesignTheme): Promise<DesignTheme> {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ data: payload }),
+    body: JSON.stringify(payload),
   });
   const data = await response.json();
 

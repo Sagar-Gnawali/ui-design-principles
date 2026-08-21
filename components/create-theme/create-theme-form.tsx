@@ -174,12 +174,9 @@ export default function CreateThemeForm() {
     try {
       //Todo Call API here
       const res = await mutateAsync(form);
-      console.log("resposne from api >>>", res, error);
-
-      //   router.push(`/designs/${createdTheme.slug}`);
+      router.push(`/about#${res.slug}`);
     } catch (er) {
       const apiError = er as ErrorInterface;
-      console.log("error and data in on Error >>>", apiError.error);
     }
   }
 
@@ -208,7 +205,10 @@ export default function CreateThemeForm() {
             required
             value={form.slug}
             placeholder="aurora"
-            onChange={(value) => updateRoot("slug", value)}
+            onChange={(value) => {
+              const mappedSlug = value?.toLowerCase().split(" ").join("-");
+              updateRoot("slug", mappedSlug);
+            }}
           />
 
           <FormField
@@ -223,7 +223,7 @@ export default function CreateThemeForm() {
             label="Layout"
             value={form.layout}
             placeholder="aurora"
-            onChange={(value) => updateRoot("layout", value)}
+            onChange={(value) => updateRoot("layout", "standard")} //make it dynamic or change in the API as well
           />
         </div>
 
@@ -344,7 +344,7 @@ export default function CreateThemeForm() {
 
             <option value="High">High</option>
 
-            <option value="Very High">Very High</option>
+            {/* <option value="Very High">Very High</option> */}
           </select>
         </div>
 
