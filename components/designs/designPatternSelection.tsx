@@ -1,6 +1,9 @@
 import type { CSSProperties } from "react";
 
 import type { DesignTheme } from "@/themes/types";
+import { DeleteIcon } from "lucide-react";
+import { ErrorInterface, useDeleteTheme } from "@/app/services/theme.mutation";
+import { useQueryClient } from "@tanstack/react-query";
 
 type DesignPatternSectionProps = {
   theme: DesignTheme;
@@ -91,12 +94,15 @@ export default function DesignPatternSection({
               </p>
             </div>
 
-            <a
-              href={`/designs/${theme.slug}`}
-              className={`${buttonBase} ${styles.primaryButton}`}
-            >
-              Open live design
-            </a>
+            <div className={`${buttonBase} `}>
+              <a
+                href={`/designs/${theme.slug}`}
+                className={`${buttonBase} ${styles.primaryButton}`}
+              >
+                Open live design
+              </a>
+              <DeleteSlug slug={theme.slug} />
+            </div>
           </div>
         </header>
 
@@ -314,3 +320,32 @@ function ProfileList({ title, items, theme }: ProfileListProps) {
     </article>
   );
 }
+
+export const DeleteSlug = (slug: { slug: string }) => {
+  const { mutateAsync, isPending } = useDeleteTheme();
+  const queryClient = useQueryClient();
+  if (isPending) {
+    return <p>Deleteng</p>;
+  }
+  const handleDelete = async () => {
+    alert(`are you sure want to delete this ${slug.slug}?`);
+
+    try {
+      const res = await mutateAsync(slug.slug);
+      if (res.status === "success") {
+        queryClient.invalidateQueries({
+          queryKey: ["themes"],
+        });
+      }
+    } catch (err) {
+      const e = err as ErrorInterface;
+    }
+  };
+  return (
+    <>
+      <div onClick={handleDelete}>
+        <DeleteIcon size={25} color="red" className="ml-4 cursor-pointer" />
+      </div>
+    </>
+  );
+};
