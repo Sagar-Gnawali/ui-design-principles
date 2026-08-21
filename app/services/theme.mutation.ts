@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { DesignTheme } from "@/themes/types";
 import { BASE_URL } from "@/config/constants";
+import { httpCall } from "./_interceptor";
 
 export type ErrorInterface = {
   statusCode: null;
@@ -23,7 +24,23 @@ async function createTheme(payload: DesignTheme): Promise<DesignTheme> {
   }
   return data;
 }
+export async function deleteTheme(
+  slug: string,
+): Promise<{ statusCode: number; status: string; data: string }> {
+  const response = await httpCall<{
+    statusCode: number;
+    status: string;
+    data: string;
+  }>({
+    endpoint: `${BASE_URL}/themes/${slug}`,
+    method: "DELETE",
+  });
 
+  if (!response.ok) {
+    throw new Error("Failed to fetch delete theme");
+  }
+  return response.data;
+}
 export function useCreateTheme() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -31,6 +48,18 @@ export function useCreateTheme() {
     onSuccess: async () => {
       await queryClient.invalidateQueries({
         queryKey: ["themes"],
+      });
+    },
+  });
+}
+
+export function useDeleteTheme() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: deleteTheme,
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({
+        queryKey: ["remove-theme"],
       });
     },
   });
