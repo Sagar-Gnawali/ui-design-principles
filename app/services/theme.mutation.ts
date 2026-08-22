@@ -9,7 +9,12 @@ export type ErrorInterface = {
   status: string;
   error: string;
 };
-async function createTheme(payload: DesignTheme): Promise<DesignTheme> {
+
+async function createTheme(payload: DesignTheme): Promise<{
+  statusCode: number;
+  status: string;
+  data: DesignTheme;
+}> {
   const response = await fetch(`${BASE_URL}/themes`, {
     method: "POST",
     headers: {

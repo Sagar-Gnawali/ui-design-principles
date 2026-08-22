@@ -1,9 +1,9 @@
 import type { CSSProperties } from "react";
 
 import type { DesignTheme } from "@/themes/types";
-import { DeleteIcon } from "lucide-react";
 import { ErrorInterface, useDeleteTheme } from "@/app/services/theme.mutation";
 import { useQueryClient } from "@tanstack/react-query";
+import DeleteConfirm from "../modals/deleteModal";
 
 type DesignPatternSectionProps = {
   theme: DesignTheme;
@@ -328,8 +328,6 @@ export const DeleteSlug = (slug: { slug: string }) => {
     return <p>Deleteng</p>;
   }
   const handleDelete = async () => {
-    alert(`are you sure want to delete this ${slug.slug}?`);
-
     try {
       const res = await mutateAsync(slug.slug);
       if (res.status === "success") {
@@ -342,10 +340,14 @@ export const DeleteSlug = (slug: { slug: string }) => {
     }
   };
   return (
-    <>
-      <div onClick={handleDelete}>
-        <DeleteIcon size={25} color="red" className="ml-4 cursor-pointer" />
-      </div>
-    </>
+    <div className="ml-2">
+      <DeleteConfirm
+        className="cursor-pointer"
+        onDelete={handleDelete}
+        description={`Are you sure to delete this ${slug.slug} design?`}
+        confirmText={"Confirm"}
+        triggerText="Delete"
+      />
+    </div>
   );
 };
