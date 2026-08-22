@@ -88,10 +88,8 @@ export default function CreateThemeForm() {
   function addArrayItem(key: "suitedFor" | "useCases" | "considerations") {
     setForm((current) => ({
       ...current,
-
       designProfile: {
         ...current.designProfile,
-
         [key]: [...current.designProfile[key], ""],
       },
     }));
@@ -172,11 +170,13 @@ export default function CreateThemeForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     try {
-      //Todo Call API here
       const res = await mutateAsync(form);
-      router.push(`/about#${res.slug}`);
+      if (res.status === "success" && res.statusCode === 201) {
+        router.push(`/about#${res.data.slug}`);
+      }
     } catch (er) {
       const apiError = er as ErrorInterface;
+      return apiError;
     }
   }
 
